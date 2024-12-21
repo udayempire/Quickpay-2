@@ -1,5 +1,5 @@
 {
-  "name": "Payment-App-3",
+  "name": "payment-app-3",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/next-auth": "^3.15.0",
     "prettier": "^3.2.5",
     "turbo": "^2.3.3",
@@ -23,6 +24,7 @@
   ],
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "next-auth": "^4.24.11"
+    "next-auth": "^4.24.11",
+    "recoil": "^0.7.7"
   }
 }
