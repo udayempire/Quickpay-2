@@ -4,8 +4,8 @@ interface AppbarProps {
     user?: {
         name?: string | null
     }
-    onSignin: any,
-    onSignout: any
+    onSignin: ()=> void,
+    onSignout: ()=> void
 }
 
 export const Appbar = ({ user, onSignout, onSignin }: AppbarProps) => {
@@ -17,5 +17,4 @@ export const Appbar = ({ user, onSignout, onSignin }: AppbarProps) => {
             <Button onClick={user ? onSignout : onSignin} > { user ? "Logout": "Login"}</Button>
         </div>
     </div >
-
 }
