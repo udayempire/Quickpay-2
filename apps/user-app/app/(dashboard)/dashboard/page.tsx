@@ -1,5 +1,4 @@
-
-export default function Transactions() {
+export default function Dashboard() {
     return <div>
         Dashboard
     </div>
