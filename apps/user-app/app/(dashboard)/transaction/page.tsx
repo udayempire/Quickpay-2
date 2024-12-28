@@ -1,5 +1,5 @@
-export const Transaction=()=>{
+export default function Transaction(){
     return <div>
-        Hello
+        Transaction
     </div>
 }
