@@ -2,8 +2,8 @@ import { getServerSession } from "next-auth";
 import prisma from "@repo/db/client";
 import { authOptions } from "../../lib/auth";
 import { AddMoneyCard } from "../../../components/AddMoneyCard";
-
-
+import { BalanceCard } from "../../../components/BalanceCard";
+import {OnRampTransaction} from "../../../components/OnRampTransactions";
 async function getBalance(){
     const session = await getServerSession(authOptions);
     const balance = await prisma.balance.findFirst({
@@ -16,7 +16,6 @@ async function getBalance(){
         locked: balance.locked || 0
     }
 }
-
 async function getOnRampTransaction(){
     const session = await getServerSession(authOptions);
     const txns = await prisma.onRampTransaction.findMany({
@@ -30,26 +29,23 @@ async function getOnRampTransaction(){
         status:t.status,
         provider:t.provider
     }))
-    // return {
-    //     time: txns.time,
-    //     amount: txns.amount,
-    //     status: txns.status,
-    //     provider: txns.provider
-
-    // }
 }
-
-
 export default async function Transfer(){
     const balance = await getBalance();
-    const onRampTransaction = await getOnRampTransaction();
+    const transaction = await getOnRampTransaction();
     return <div className="w-screen">
         <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
-            transfer
+            Transfer
         </div>
-        <div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4">
             <div>
                 <AddMoneyCard/>
+            </div>
+            <div>
+                <BalanceCard amount={balance.amount} locked={balance.locked}/>
+                <div className="pt-4">
+                    <OnRampTransaction transactions={transaction}/>
+                </div>
             </div>
         </div>
     </div>
