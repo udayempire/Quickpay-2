@@ -2,13 +2,14 @@ import { SidebarItem } from "../../components/SidebarItem";
 
 export default function Layout({ children, }: { children: React.ReactNode }): JSX.Element {
     return (
-        <div className="flex">
+        <div className="flex bg-[#ededed]">
             {/* sidebar */}
-            <div className="w-72 border-r border-slate-300 min-h-screen mr-4 pt-28">
+            <div className="w-72 border-r border-slate-300 min-h-screen mr-4 pt-28 " >
                 <div>
                     <SidebarItem href="/dashboard" title="Home" icon={<HomeIcon />} />
-                    <SidebarItem href="/transaction" title="Transaction" icon={<TransactionsIcon />} />
                     <SidebarItem href="/transfer" title="Transfer" icon={<TransferIcon />} />
+                    <SidebarItem href="/transaction" title="Transaction" icon={<TransactionsIcon />} />
+                    <SidebarItem href="/p2p" title="P2P Transfer" icon={<P2PIcon />} />
                 </div>
             </div>
             {/* rightbar */}
@@ -36,3 +37,9 @@ function TransactionsIcon() {
     </svg>
 }
 
+function P2PIcon(){
+    return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+</svg>
+
+}

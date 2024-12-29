@@ -9,7 +9,7 @@ interface AppbarProps {
 }
 
 export const Appbar = ({ user, onSignout, onSignin }: AppbarProps) => {
-    return <div className="flex justify-between border-b px-4">
+    return <div className="flex justify-between border-b-[3px]  px-4 bg-[#ededed]">
         <div className="text-xl flex flex-col font-bold   justify-center">
             QuickPay
         </div>
