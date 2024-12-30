@@ -23,7 +23,7 @@ export const AddMoneyCard = () => {
     return <Card title="Add Money">
         <div className="">
             <TextInput label="Amount" placeholder="Enter the Amount" onChange={(value) => {
-                setAmount(value)
+                setAmount(Number(value))
             }} />
             <div>
                 Bank
