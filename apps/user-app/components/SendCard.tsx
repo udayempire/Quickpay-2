@@ -9,10 +9,10 @@ export const SendCard = () => {
     const [number, setNumber] = useState("")
     const [amount, setAmount] = useState(0)
 
-    return <div className="h-[90vh]">
-        <Center>
-            <Card title="Send Money">
-                <div className="min-w-72 pt-2 ">
+    return <div className="h-[90vh] ">
+
+            <Card title="Send Money" >
+                <div className=" pt-2 ">
                     <TextInput label="Phone Number" placeholder="Enter Your Phone Number" onChange={
                         (value) => {
                             setNumber(value)
@@ -24,7 +24,7 @@ export const SendCard = () => {
                         }
                     } />
                     <div className=" flex justify-center pt-4">
-                        <Button onClick={async() => {
+                        <Button className="w-36"  onClick={async() => {
                             console.log(number,amount)
                             await p2pTransfer({to:number ,amount:Number(amount)*100})
                         }} >
@@ -33,6 +33,6 @@ export const SendCard = () => {
                     </div>
                 </div>
             </Card>
-        </Center>
+
     </div>
 }
