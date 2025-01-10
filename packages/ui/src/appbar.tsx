@@ -1,5 +1,5 @@
 
-import { Button } from "./button.js"
+import { Button } from "./button.tsx"
 interface AppbarProps {
     user?: {
         name?: string | null
