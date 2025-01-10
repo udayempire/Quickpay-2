@@ -45,6 +45,7 @@ async function getReceivedtP2PTransfer(){
         include:{
             fromUser:{
                 select:{
+
                     name:true
                 }
             }
