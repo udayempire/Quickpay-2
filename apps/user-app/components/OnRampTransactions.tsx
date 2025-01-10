@@ -3,7 +3,7 @@ export const OnRampTransaction=({transactions}:{
     transactions:{
         time: Date,
         amount: number,
-        status:"Success" | "Failure" | "Pending" //make status type more specific
+        status:"Success" | "Failure" | "Processing" //make status type more specific
         provider:string
     }[]
 })=>{
