@@ -1,7 +1,7 @@
 import { Card } from "@repo/ui/card"
 export const SentP2PTransaction=({sentTransactions}:{
     sentTransactions:{
-        to:string,
+        to:string | null,
         amount:number,
         timestamp: Date
     }[]
@@ -35,7 +35,7 @@ export const SentP2PTransaction=({sentTransactions}:{
 }
 export const ReceivedP2PTransaction=({receivedTransactions}:{
     receivedTransactions:{
-        from:string,
+        from:string | null,
         amount:number,
         timestamp: Date
     }[]

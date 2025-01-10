@@ -12,8 +12,8 @@ async function getBalance(){
         }
     });
     return {
-        amount: balance.amount || 0,
-        locked: balance.locked || 0
+        amount: balance?.amount || 0,
+        locked: balance?.locked || 0
     }
 }
 async function getSentP2PTransfer(){
