@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json turbo.json tsconfig.json ./
+COPY package.json package-lock.json turbo.json ./
 
 COPY apps ./apps
 
